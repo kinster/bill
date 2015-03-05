@@ -2,7 +2,6 @@ package skybill;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
-import play.Logger;
 import utils.JsonReader;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -58,8 +57,5 @@ public class Steps {
     @Then("^the complete total is \"(.*?)\"$")
     public void the_complete_total_is(String total) throws Throwable {
         assertThat(GlobalHooks.TEST_BROWSER.findFirst("#complete-total").getText()).isEqualTo(total);
-    }
-
-
-    
+    }    
 }

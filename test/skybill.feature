@@ -7,5 +7,5 @@ Feature: Viewing a Sky Bill
     And the section heading one be "Subscriptions"
     And the subscriptions should have a total of "£71.40"
     And the section heading two be "Call Charges"
-    And the section heading three be "Sky Store"
-  	And the complete total is "£136.03"
+	And the section heading three be "Sky Store"
+	And the complete total is "£136.03"

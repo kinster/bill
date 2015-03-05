@@ -11,6 +11,7 @@ import static play.test.Helpers.*;
  * Initialise a Test Server for Steps
  */
 public class GlobalHooks {
+	
     public static int PORT = 3333;
     public static TestBrowser TEST_BROWSER;
     private static TestServer TEST_SERVER;
