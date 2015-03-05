@@ -1,0 +1,140 @@
+@(message: String, bill: models.Bill) 
+
+@main("Sky Bill") { 
+
+	<div class="container">
+		<div class="row heading">
+			<div class="col-sm-12 col-md-12">
+				<img src="assets/images/skylogo.png" class="img-responsive" alt="Sky Logo">
+			</div>
+		</div>
+		<div class="row heading">
+			<div class="col-sm-4 col-md-4 text-left">
+				<h2>@message</h2>
+			</div>
+			<div class="col-sm-8 col-md-8 text-right">
+				<h2>Date: @bill.getStatement().getGenerated()</h2>
+			</div>
+		</div>
+		
+		<div class="jumbotron">
+			<h2>Total Amount Due (@bill.getStatement().getDueDate()) <span id="complete-total">@bill.toPriceString()</span></h2>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-12 col-md-12">
+				<div class="panel">
+				  <div class="panel-body">
+					<h4>Period: @bill.getStatement().getPeriod().getFrom() to @bill.getStatement().getPeriod().getTo()</h4>
+				  </div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingOne">
+					<div class="text-left">
+						<h3 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#subscriptions" aria-expanded="true"
+								aria-controls="subscriptions" id="subscription-link">Subscriptions</a>
+						</h3>
+					</div>
+				</div>
+				<div id="subscriptions" class="panel-collapse collapse in"
+					role="tabpanel" aria-labelledby="headingOne">
+					<div class="panel-body">
+						@for(subscription <- bill.getPackageSubscriptions().getSubscriptions()) {
+							<div class="col-sm-4 col-md-4 text-left">
+								@subscription.getType()							
+							</div>						
+							<div class="col-sm-4 col-md-4 text-left">
+								@subscription.getName()							
+							</div>						
+					  		<div class="col-sm-4 col-md-4 text-right">
+					  			@subscription.toPriceString()
+					  		</div>
+						}	
+										
+						<div class="col-sm-8 col-md-8 text-left">
+							<h4>Package Total</h4>
+						</div>
+					  	<div class="col-sm-4 col-md-4 text-right">
+							<h4 id="subscriptions-total">@bill.getPackageSubscriptions.toPriceString()</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingTwo">
+					<h4 class="panel-title">
+						<a class="collapsed" data-toggle="collapse" data-parent="#accordion"
+							href="#callCharges" aria-expanded="false"
+							aria-controls="callCharges" id="call-charges-link">Call Charges</a>
+					</h4>
+				</div>
+				<div id="callCharges" class="panel-collapse collapse" role="tabpanel"
+					aria-labelledby="headingTwo">
+					<div class="panel-body">
+						@for(call <- bill.getCallCharges().getCalls()) {
+							<div class="col-sm-4 col-md-4 text-left">
+								@call.getCalled()							
+							</div>						
+							<div class="col-sm-4 col-md-4 text-left">
+								@call.getDuration()							
+							</div>						
+					  		<div class="col-sm-4 col-md-4 text-right">
+					  			@call.toPriceString()
+					  		</div>
+						}
+						<div class="col-sm-8 col-md-8 text-left">
+							<h4>Call Charges Total</h4>
+						</div>
+					  	<div class="col-sm-4 col-md-4 text-right">
+							<h4 id="callchargestotal">@bill.getCallCharges.toPriceString()</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingThree">
+					<h4 class="panel-title">
+						<a class="collapsed" data-toggle="collapse" data-parent="#accordion"
+							href="#skyStore" aria-expanded="false"
+							aria-controls="headingThree" id="sky-store-link">Sky Store</a>
+					</h4>
+				</div>
+				<div id="skyStore" class="panel-collapse collapse" role="tabpanel"
+					aria-labelledby="headingThree">
+					<div class="panel-body">
+						<h4>Rentals</h4>
+						@for(rental <- bill.getSkyStore.getRentals()) {
+							<div class="col-sm-8 col-md-8 text-left">
+								<p>@rental.getTitle()</p>						
+							</div>						
+					  		<div class="col-sm-4 col-md-4 text-right">
+					  			<p>@rental.toPriceString()</p>
+					  		</div>
+						}
+						<h4>Buy and Keep</h4>
+						@for(buyAndKeep <- bill.getSkyStore().getBuyAndKeep()) {
+							<div class="col-md-8 text-left">
+								<p>@buyAndKeep.getTitle()</p>
+							</div>						
+					  		<div class="col-md-4 text-right">
+					  			<p>@buyAndKeep.toPriceString()</p>
+					  		</div>
+						}
+						<div class="col-sm-8 col-md-8 text-left">
+							<h4>Sky Store Total</h4>
+						</div>
+					  	<div class="col-sm-4 col-md-4 text-right">
+							<h4 id="sky-store-total">@bill.getSkyStore().toPriceString()</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+}

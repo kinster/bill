@@ -1,0 +1,16 @@
+@(t: Throwable)
+
+@main("Sky Bill") { 
+	<div class="container">
+		<div class="alert alert-info">
+			An unexpected error has occurred. 
+		</div>
+		
+		<blockquote>
+			<p>@t.getMessage</p>
+		</blockquote>
+	</div>
+}
+
+
+

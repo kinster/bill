@@ -1,0 +1,26 @@
+[0m[[0mdebug[0m] [0m[34mTest run started[0m[0m
+[0m[[0mdebug[0m] [0mTest [33mScenario: View Bill[0m started[0m
+[0m[[0mdebug[0m] [0mTest [33mScenario: View Bill[0m.[36mGiven JSON data is available from an endpoint http://safe-plains-5453.herokuapp.com/bill.json[0m started[0m
+[0m[[0mdebug[0m] [0mTest [33mScenario: View Bill[0m.[36mGiven JSON data is available from an endpoint http://safe-plains-5453.herokuapp.com/bill.json[0m finished[0m
+[0m[[0mdebug[0m] [0mTest [33mScenario: View Bill[0m.[36mWhen I go to the bill page[0m started[0m
+[0m[[0mdebug[0m] [0mTest [33mScenario: View Bill[0m.[36mWhen I go to the bill page[0m finished[0m
+[0m[[0mdebug[0m] [0mTest [33mScenario: View Bill[0m.[36mThen I should see my sky bill with title "Sky Bill"[0m started[0m
+[0m[[0mdebug[0m] [0mTest [33mScenario: View Bill[0m.[36mThen I should see my sky bill with title "Sky Bill"[0m finished[0m
+[0m[[0mdebug[0m] [0mTest [33mScenario: View Bill[0m.[36mAnd the section heading one be "Subscriptions"[0m started[0m
+[0m[[0mdebug[0m] [0mTest [33mScenario: View Bill[0m.[36mAnd the section heading one be "Subscriptions"[0m finished[0m
+[0m[[0mdebug[0m] [0mTest [33mScenario: View Bill[0m.[36mAnd the subscriptions should have a total of "£71.40"[0m started[0m
+[0m[[0mdebug[0m] [0mTest [33mScenario: View Bill[0m.[36mAnd the subscriptions should have a total of "£71.40"[0m finished[0m
+[0m[[0mdebug[0m] [0mTest [33mScenario: View Bill[0m.[36mAnd the section heading two be "Call Charges"[0m started[0m
+[0m[[0mdebug[0m] [0mTest [33mScenario: View Bill[0m.[36mAnd the section heading two be "Call Charges"[0m finished[0m
+[0m[[0mdebug[0m] [0mTest [33mScenario: View Bill[0m.[36mAnd the section heading three be "Sky Store"[0m started[0m
+[0m[[0mdebug[0m] [0mTest [33mScenario: View Bill[0m.[36mAnd the section heading three be "Sky Store"[0m finished[0m
+[0m[[0mdebug[0m] [0mTest [33mScenario: View Bill[0m.[36mAnd the complete total is "£136.03"[0m started[0m
+[0m[[0mdebug[0m] [0mTest [33mScenario: View Bill[0m.[36mAnd the complete total is "£136.03"[0m finished[0m
+[0m[[0mdebug[0m] [0mTest [33mScenario: View Bill[0m finished[0m
+[0m[[0mdebug[0m] [0m[34mTest run finished: [0m[34m0 failed[0m[34m, [0m[34m0 ignored[0m[34m, 9 total, 6.271s[0m[0m
+[0m[[0mdebug[0m] [0mFramework implementation 'org.specs2.runner.Specs2Framework' not present.[0m
+[0m[[0mdebug[0m] [0mSummary for JUnit not available.[0m
+[0m[[0mdebug[0m] [0mSummary for specs2 not available.[0m
+[0m[[0minfo[0m] [0mPassed: Total 9, Failed 0, Errors 0, Passed 9[0m
+[0m[[0mdebug[0m] [0mPassed tests:[0m
+[0m[[0mdebug[0m] [0m	skybill.RunCucumber[0m
